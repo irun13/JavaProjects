@@ -124,15 +124,9 @@ public class XOGame {
                     map[y][i + 2] = DOT_O;
                     turn = 1;
                 }
-                // XX0 ||  XXX0
-                if (turn == 0 && i + 2 <= SIZE && (map[y][i + 2] == DOT_O || map[y][i + 2] == DOT_X) && isCellValid(y, i - 1)) {
-                    // System.out.println("XX0");
-                    map[y][i - 1] = DOT_O;
-                    turn = 1;
-                }
-                // XX|
-                if (turn == 0 && i + 2 == SIZE && isCellValid(y, i - 1)) {
-                    //System.out.println("XX|");
+                // XX0 или  XXX0 или XX|
+                if (turn == 0 && i + 2 <= SIZE && !isCellValid(y, i - 1)) {
+                    System.out.println("XX0");
                     map[y][i - 1] = DOT_O;
                     turn = 1;
                 }
