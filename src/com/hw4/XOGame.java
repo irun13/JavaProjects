@@ -85,15 +85,10 @@ public class XOGame {
     }
 
     public static boolean isCellValid(int y, int x) {
-        if (x < 0 || y < 0 || x > SIZE || y > SIZE) {
-            // System.out.println("Некорректные координаты");
+        if (x < 0 || y < 0 || x >= SIZE || y >= SIZE) {
             return false;
         }
-        if (map[y][x] != DOT_EMPTY) {
-            // System.out.println("Занято!");
-            return false;
-        }
-        return true;
+        return map[y][x] == DOT_EMPTY;
     }
 
     public static void aiTurn() {
@@ -118,15 +113,15 @@ public class XOGame {
         for (int i = 0; i < SIZE; i++) {
             if (i + 1 < SIZE && map[y][i] == DOT_X && map[y][i + 1] == DOT_X) {
                 //  XX_
-                //System.out.println("и тут был");
+                System.out.println("и тут был");
                 if (x + 2 <= SIZE && isCellValid(y, i + 2)) {
-                    //System.out.println("XX_");
+                    System.out.println("XX_");
                     map[y][i + 2] = DOT_O;
                     turn = 1;
                 }
                 // XX0 или  XXX0 или XX|
-                if (turn == 0 && i + 2 <= SIZE && !isCellValid(y, i - 1)) {
-                    System.out.println("XX0");
+                if (turn == 0 && !isCellValid(y, i + 2) && isCellValid(y, i - 1)) {
+                    //System.out.println("XX0");
                     map[y][i - 1] = DOT_O;
                     turn = 1;
                 }
