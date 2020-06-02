@@ -8,18 +8,19 @@ public class Main {
 5. * Добавить животным разброс в ограничениях. То есть у одной собаки ограничение на бег может быть 400 м., у другой 600 м.*/
 
     public static void main(String[] args) {
+
         Cat cat = new Cat("Barsik", "red", 2);
         cat.run(250);
         cat.swim(150);
 
         Dog dog = new Dog("Bobik0", "blue", 2);
-        dog.run(555);
+        dog.run(1000);
         dog.swim(150);
 
         Dog dog1 = new Dog("Bobik1", "blue", 2);
-        dog.run(2);
-        dog.swim(-150);
+        dog1.run(1000);
+        dog1.swim(-150);
 
-        System.out.println(dog1.getCountDog());
+        System.out.println("собачек " + dog1.getCountDog());
     }
 }

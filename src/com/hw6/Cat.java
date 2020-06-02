@@ -2,7 +2,7 @@ package hw6;
 
 public class Cat extends Animal {
     int maxrun = 200;
-    int countCat = 0;
+     int countCat = 0;
     public Cat(String name, String color, int age) {
         super(name, color, age);
         countCat++;
