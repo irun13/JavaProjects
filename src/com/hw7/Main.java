@@ -11,9 +11,13 @@ public class Main {
     */
     public static void main(String[] args) {
         Cat cat = new Cat("Bars");
+        Cat cat1 = new Cat("Irun", 50);
+        Cat cat2 = new Cat("BigIrun", 72);
         Plate plate = new Plate(100);
 
         cat.eat(plate);
+        cat1.eat(plate);
+        cat2.eat(plate);
 
         plate.info();
 
