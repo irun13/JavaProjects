@@ -18,6 +18,7 @@ public class Plate {
             System.out.println("Котик " + cat.getName() + " остался голодным! МяУ!");
         } else {
             food -= amount;
+            cat.hunger = true;
             System.out.println("Котик " + cat.getName()+ " покушал)))");
         }
     }

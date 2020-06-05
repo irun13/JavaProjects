@@ -1,5 +1,7 @@
 package hw7;
 
+import java.sql.SQLOutput;
+
 public class Main {
     /*
     1. Расширить задачу про котов и тарелки с едой
@@ -20,6 +22,8 @@ public class Main {
         cat2.eat(plate);
 
         plate.info();
+
+        System.out.println(cat.getHunger() + " " + cat1.getHunger() + " " + cat2.getHunger());
 
     }
 }
