@@ -1,5 +1,7 @@
 package hw7;
 
+import hw5.Employee;
+
 import java.sql.SQLOutput;
 
 public class Main {
@@ -12,18 +14,23 @@ public class Main {
 6. Добавить в тарелку метод, с помощью которого можно было бы добавлять еду в тарелку
     */
     public static void main(String[] args) {
-        Cat cat = new Cat("Bars");
-        Cat cat1 = new Cat("Irun", 50);
-        Cat cat2 = new Cat("BigIrun", 72);
-        Plate plate = new Plate(100);
+        Cat[] catArr = new Cat[5];
+        catArr[0] = new Cat("Bars");
+        catArr[1] = new Cat("Irun", 50);
+        catArr[2] = new Cat("BigIrun", 72);
+        catArr[3] = new Cat("SmolIrun", 2);
+        catArr[4] = new Cat("BigIvan", 172);
 
-        cat.eat(plate);
-        cat1.eat(plate);
-        cat2.eat(plate);
+        Plate plate = new Plate(50);
+
+        for (int i = 0; i < catArr.length; i++) {
+            catArr[i].eat(plate);
+            System.out.println("Котик " + catArr[i].getName() + " сыт? " + catArr[i].getHunger() + ". В тарелке осталось " + plate.getFood());
+        }
 
         plate.info();
-
-        System.out.println(cat.getHunger() + " " + cat1.getHunger() + " " + cat2.getHunger());
+        plate.addFood(150);
+        plate.info();
 
     }
 }
