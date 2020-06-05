@@ -15,7 +15,7 @@ public class Plate {
 
     public void decreaseFood(int amount, Cat cat) {
         if (amount> food){
-            System.out.println("Котик " + cat.getName() + "остался голодным! МяУ!");
+            System.out.println("Котик " + cat.getName() + " остался голодным! МяУ!");
         } else {
             food -= amount;
             System.out.println("Котик " + cat.getName()+ " покушал)))");

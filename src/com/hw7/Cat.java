@@ -20,7 +20,7 @@ public class Cat {
 
     public void eat(Plate plate) {
         System.out.println(name + " eat...");
-        plate.decreaseFood(appetite);
+        plate.decreaseFood(appetite, this);
     }
 
 }
